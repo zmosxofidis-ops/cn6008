@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Dark Theme Colors -->
+    <color name="primary">#4DABFF</color> <!-- Lighter blue for dark theme -->
+    <color name="primary_variant">#006494</color>
+    <color name="secondary">#0582CA</color>
+
+    <color name="background">#121212</color> <!-- Dark background -->
+    <color name="surface">#1E1E1E</color> <!-- Dark surface for cards/dialogs -->
+    <color name="error">#CF6679</color>
+
+    <color name="on_primary">#000000</color>
+    <color name="on_secondary">#000000</color>
+    <color name="on_background">#FFFFFF</color> <!-- White text -->
+    <color name="on_surface">#FFFFFF</color> <!-- White text -->
+    <color name="text_secondary">#BDBDBD</color> <!-- Light grey text -->
+
+    <color name="high_contrast_blue">#FFFFFF</color> <!-- Now white for dark theme -->
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="cat_infrastructure">#FF9800</color>
+    <color name="cat_lighting">#FFEB3B</color>
+    <color name="cat_cleanliness">#4CAF50</color>
+    <color name="cat_other">#9E9E9E</color>
 </resources>

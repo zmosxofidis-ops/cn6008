@@ -1,10 +1,17 @@
 <resources>
-    <string name="app_name">SmartCityApp</string>
+    <string name="app_name">Smart City App</string>
+    <string name="home_title">Smart City App</string>
+    <string name="home_subtitle">Demo Version</string>
+    <string name="btn_new_report">Νέα Αναφορά</string>
+    <string name="btn_view_map">Προβολή Χάρτη</string>
+    <string name="fab_report_text">Αναφορά</string>
+
     <string-array name="report_categories">
-        <item>Οδοποιία</item>
-        <item>Ηλεκτροφωτισμός</item>
-        <item>Καθαριότητα</item>
-        <item>Πράσινο</item>
+        <item>Οδοποιία (Λακκούβες, κλπ)</item>
+        <item>Ηλεκτροφωτισμός (Καμένες λάμπες)</item>
+        <item>Καθαριότητα (Κάδοι, σκουπίδια)</item>
+        <item>Πράσινο (Δέντρα, κλαδιά)</item>
+        <item>Ύδρευση/Αποχέτευση</item>
         <item>Άλλο</item>
     </string-array>
 </resources>
