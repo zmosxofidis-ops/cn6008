@@ -15,6 +15,10 @@ import com.example.smartcityapp.models.CityReport;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Adapter για τη διαχείριση και εμφάνιση της λίστας αναφορών στο RecyclerView.
+ * Συνδέει τα δεδομένα των αναφορών με το γραφικό περιβάλλον του ιστορικού.
+ */
 public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportViewHolder> {
 
     private final List<CityReport> reports;
@@ -26,6 +30,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
     @NonNull
     @Override
     public ReportViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Δημιουργία της όψης για κάθε αντικείμενο της λίστας
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_report, parent, false);
         return new ReportViewHolder(view);
     }
@@ -34,17 +39,18 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
     public void onBindViewHolder(@NonNull ReportViewHolder holder, int position) {
         CityReport report = reports.get(position);
         
-        // Safety check to prevent crashes if data is missing
+        // Έλεγχος εγκυρότητας δεδομένων για την αποφυγή κρασαρίσματος
         String title = report.getTitle() != null ? report.getTitle() : "Αναφορά";
         String category = report.getCategory() != null ? report.getCategory() : "Άλλο";
         String desc = report.getDescription() != null ? report.getDescription() : "";
 
+        // Αντιστοίχιση κειμένων στα γραφικά στοιχεία
         holder.tvTitle.setText(title);
         holder.tvCategory.setText(category.toUpperCase());
         holder.tvDescription.setText(desc);
         holder.tvLocation.setText(String.format(Locale.getDefault(), "%.4f, %.4f", report.getLatitude(), report.getLongitude()));
 
-        // Set category indicator color
+        // Καθορισμός χρώματος ένδειξης βάσει της κατηγορίας προβλήματος
         int color = Color.GRAY;
         if (category.contains("Οδοποιία")) color = Color.parseColor("#FF9800");
         else if (category.contains("Ηλεκτροφωτισμός")) color = Color.parseColor("#FFEB3B");
@@ -53,10 +59,11 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         else if (category.contains("Ύδρευση")) color = Color.parseColor("#2196F3");
 
         try {
+            // Ενημέρωση του χρώματος του στρογγυλού indicator
             GradientDrawable bg = (GradientDrawable) holder.viewIndicator.getBackground();
             if (bg != null) bg.setColor(color);
         } catch (Exception e) {
-            // Prevent crash if drawable is missing
+            // Προστασία σε περίπτωση που το background drawable δεν είναι GradientDrawable
         }
     }
 
@@ -65,6 +72,9 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         return reports.size();
     }
 
+    /**
+     * ViewHolder που κρατάει τις αναφορές στα γραφικά στοιχεία κάθε γραμμής.
+     */
     static class ReportViewHolder extends RecyclerView.ViewHolder {
         TextView tvTitle, tvCategory, tvDescription, tvLocation;
         View viewIndicator;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="?attr/colorSurface"
     tools:context=".MainActivity">
 
     <!-- 1. HOME SCREEN UI -->
@@ -14,8 +14,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="24dp"
-        android:visibility="visible"
-        android:background="@color/background">
+        android:visibility="visible">
 
         <Space
             android:layout_width="match_parent"
@@ -27,7 +26,7 @@
             android:layout_height="120dp"
             android:layout_gravity="center"
             android:src="@android:drawable/ic_dialog_map"
-            app:tint="@color/primary" />
+            app:tint="?attr/colorPrimary" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +34,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:text="SmartCity"
-            android:textColor="@color/primary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="36sp"
             android:fontFamily="sans-serif-condensed-light"
             android:textStyle="bold" />
@@ -46,7 +45,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="48dp"
             android:text="Η πόλη σου στην παλάμη σου"
-            android:textColor="@color/text_secondary"
+            android:textColor="?attr/colorOnSurfaceVariant"
             android:textSize="16sp" />
 
         <com.google.android.material.card.MaterialCardView
@@ -55,8 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            app:strokeWidth="0dp">
+            app:cardElevation="2dp">
 
             <LinearLayout
                 android:id="@+id/btn_home_report"
@@ -73,7 +71,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@android:drawable/ic_menu_camera"
-                    app:tint="@color/primary" />
+                    app:tint="?attr/colorPrimary" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -86,15 +84,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Νέα Αναφορά"
-                        android:textColor="@color/on_surface"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Αναφέρετε ένα πρόβλημα στην πόλη"
-                        android:textColor="@color/text_secondary"
+                        android:text="Αναφέρετε ένα πρόβλημα"
+                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -105,8 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            app:strokeWidth="0dp">
+            app:cardElevation="2dp">
 
             <LinearLayout
                 android:id="@+id/btn_home_history"
@@ -123,7 +120,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@android:drawable/ic_menu_recent_history"
-                    app:tint="@color/primary" />
+                    app:tint="?attr/colorPrimary" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -136,15 +133,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ιστορικό"
-                        android:textColor="@color/on_surface"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Δείτε τις αναφορές που έχετε κάνει"
-                        android:textColor="@color/text_secondary"
+                        android:text="Δείτε τις αναφορές σας"
+                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -157,45 +154,133 @@
 
     </LinearLayout>
 
-    <!-- 2. HISTORY UI CONTAINER -->
+    <!-- 2. NEW REPORT UI -->
+    <LinearLayout
+        android:id="@+id/layout_report_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="?attr/colorSurface">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_report"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@android:drawable/ic_menu_revert"
+            app:title="Νέα Αναφορά" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Κατηγορία"
+                    android:textColor="?attr/colorPrimary"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/colorOutline">
+                    <Spinner
+                        android:id="@+id/report_spinner_category"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:entries="@array/report_categories" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Περιγραφή προβλήματος">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/report_et_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minLines="3"
+                        android:gravity="top"
+                        android:inputType="textMultiLine" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/report_btn_photo"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Λήψη Φωτογραφίας"
+                    app:icon="@android:drawable/ic_menu_camera" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/report_card_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="12dp">
+                    <ImageView
+                        android:id="@+id/report_iv_preview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/report_btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Αποστολή Αναφοράς"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- 3. HISTORY UI -->
     <LinearLayout
         android:id="@+id/layout_history_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:background="?attr/colorSurface">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_history"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar_history"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/surface"
-                app:navigationIcon="@android:drawable/ic_menu_revert"
-                app:title="Ιστορικό Αναφορών"
-                app:titleCentered="true"
-                app:titleTextColor="@color/on_surface" />
-        </com.google.android.material.appbar.AppBarLayout>
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@android:drawable/ic_menu_revert"
+            app:title="Ιστορικό" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:padding="12dp" />
+            android:padding="8dp" />
     </LinearLayout>
 
-    <!-- 3. GLOBAL LOADING OVERLAY -->
     <ProgressBar
         android:id="@+id/loading_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:visibility="gone"
-        android:elevation="10dp" />
+        android:visibility="gone" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

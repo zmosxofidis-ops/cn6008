@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Dark Theme Colors -->
-    <color name="primary">#4DABFF</color> <!-- Lighter blue for dark theme -->
-    <color name="primary_variant">#006494</color>
-    <color name="secondary">#0582CA</color>
+    <!-- Modern City Palette (Material 3 compatible) -->
 
-    <color name="background">#121212</color> <!-- Dark background -->
-    <color name="surface">#1E1E1E</color> <!-- Dark surface for cards/dialogs -->
-    <color name="error">#CF6679</color>
+    <!-- Light Mode Base -->
+    <color name="md_theme_light_primary">#006494</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_primaryContainer">#CCE5FF</color>
+    <color name="md_theme_light_onPrimaryContainer">#001E30</color>
+    <color name="md_theme_light_surface">#FBFCFF</color>
+    <color name="md_theme_light_onSurface">#191C1E</color>
+    <color name="md_theme_light_surfaceVariant">#DEE3EB</color>
+    <color name="md_theme_light_onSurfaceVariant">#42474E</color>
+    <color name="md_theme_light_secondaryContainer">#D1E4FF</color>
+    <color name="md_theme_light_onSecondaryContainer">#001D36</color>
 
-    <color name="on_primary">#000000</color>
-    <color name="on_secondary">#000000</color>
-    <color name="on_background">#FFFFFF</color> <!-- White text -->
-    <color name="on_surface">#FFFFFF</color> <!-- White text -->
-    <color name="text_secondary">#BDBDBD</color> <!-- Light grey text -->
+    <!-- Dark Mode Base -->
+    <color name="md_theme_dark_primary">#8BCCFF</color>
+    <color name="md_theme_dark_onPrimary">#003351</color>
+    <color name="md_theme_dark_primaryContainer">#004B71</color>
+    <color name="md_theme_dark_onPrimaryContainer">#CCE5FF</color>
+    <color name="md_theme_dark_surface">#1A1C1E</color>
+    <color name="md_theme_dark_onSurface">#E2E2E6</color>
+    <color name="md_theme_dark_surfaceVariant">#42474E</color>
+    <color name="md_theme_dark_onSurfaceVariant">#C2C7CF</color>
+    <color name="md_theme_dark_secondaryContainer">#00497E</color>
+    <color name="md_theme_dark_onSecondaryContainer">#D1E4FF</color>
 
-    <color name="high_contrast_blue">#FFFFFF</color> <!-- Now white for dark theme -->
-
-    <color name="black">#FF000000</color>
+    <!-- Generic Helpers -->
     <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
 
-    <color name="cat_infrastructure">#FF9800</color>
-    <color name="cat_lighting">#FFEB3B</color>
-    <color name="cat_cleanliness">#4CAF50</color>
-    <color name="cat_other">#9E9E9E</color>
+    <!-- Category Colors -->
+    <color name="cat_road">#FF9800</color>
+    <color name="cat_light">#FFEB3B</color>
+    <color name="cat_clean">#4CAF50</color>
+    <color name="cat_green">#8BC34A</color>
+    <color name="cat_water">#2196F3</color>
+
+    <!-- Compatibility Aliases -->
+    <color name="primary">@color/md_theme_dark_primary</color>
+    <color name="on_surface">@color/md_theme_dark_onSurface</color>
+    <color name="high_contrast_blue">#8BCCFF</color>
+    <color name="text_secondary">@color/md_theme_dark_onSurfaceVariant</color>
 </resources>
